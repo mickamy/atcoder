@@ -13,10 +13,18 @@ ans = 0
 #   end
 # end
 
-nums = A.sort.reverse
-nums.each_with_index do |x, i|
-  succeeding = nums[i + 1, nums.length - 1]
-  ans += (x * succeeding.length) - succeeding.sum
+# TLE
+# nums = A.sort.reverse
+# nums.each_with_index do |x, i|
+#   succeeding = nums[i + 1, nums.length - 1]
+#   ans += (x * succeeding.length) - succeeding.sum
+# end
+
+nums = A.sort
+sum = nums.sum # sum のメモ化
+nums.each_with_index do |num, i|
+  sum -= num
+  ans += sum - (N - i - 1) * num
 end
 
 p ans
