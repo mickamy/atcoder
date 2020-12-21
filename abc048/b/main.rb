@@ -1,5 +1,17 @@
 #!/usr/bin/env ruby
 
-input = gets.chomp.split("")
+a, b, x = gets.chomp.split.map(&:to_i)
 
-p input
+=begin
+a <= y <= b な y で x で割り切れるものの個数
+=end
+
+ans = 0
+
+a.upto(b) do |num|
+  if num % x == 0
+    ans += 1
+  end
+end
+
+puts ans
