@@ -31,7 +31,12 @@
       "id": "arc064_a",
       "label": "C",
       "title": "Boxes and Candies",
-      "url": "https://atcoder.jp/contests/abc048/tasks/arc064_a"
+      "url": "https://atcoder.jp/contests/abc048/tasks/arc064_a",
+      "directory": {
+        "path": "c",
+        "testdir": "tests",
+        "submit": "main.rb"
+      }
     },
     {
       "id": "arc064_b",
