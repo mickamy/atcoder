@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-input = gets.chomp.split("")
+_, s, _ = gets.chomp.split
 
-p input
+puts "A#{s[0].upcase}C"
