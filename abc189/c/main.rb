@@ -5,21 +5,13 @@ A = gets.chomp.split.map(&:to_i)
 
 # l 以上 r 以下の全ての整数 i について、x ≤ Ai
 
-elems = A.uniq.sort.reverse
-
-candidates = []
-elems.each do |e|
-  diffs = A.map { |a| a - e }
-  sum = 0
-  diffs.each do |d|
-    if d < 0
-      candidates << sum
-      sum = 0
-      next
-    end
-    sum += e
+ans = 0
+0.upto(N - 1) do |l|
+  x = A[l]
+  l.upto(N - 1) do |r|
+    x = [x, A[r]].min
+    ans = [ans, x * (r - l + 1)].max
   end
-  candidates << sum
 end
 
-puts candidates.max
+puts ans
