@@ -3,17 +3,12 @@
 N = gets.chomp.to_i
 S = N.times.map { gets.chomp.to_s }
 
-last = S.last
-
-ans = 0
-if last == 'AND'
-  # Yi-1, Xi = (True, True)
-else
-  # Yi-1, Xi = (True, True)
-  # Yi-1, Xi = (True, False)
-  # Yi-1, Xi = (False, False)
+ans = 1
+N.times do |i|
+  s = S[i]
+  if s == 'OR'
+    ans += 2 ** (i + 1)
+  end
 end
 
-and_count = S.count('AND')
-
-p 2 ** (N + 1) - (and_count * 3) - 1
+puts ans
