@@ -14,8 +14,8 @@ MITSUMORI.each.with_index do |mitsumori, index|
   candidates_b[index] = b
 end
 
-a_firstest, a_time = candidates_a.sort_by { |_, v| v }.first
-b_firstest, b_time = candidates_b.sort_by { |_, v| v }.first
+a_firstest, a_time = candidates_a.min_by { |_, v| v }
+b_firstest, b_time = candidates_b.min_by { |_, v| v }
 
 ans = -1
 if a_firstest == b_firstest
