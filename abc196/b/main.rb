@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
-input = gets.chomp.split('')
+X = gets.chomp
+
+puts X.to_i
